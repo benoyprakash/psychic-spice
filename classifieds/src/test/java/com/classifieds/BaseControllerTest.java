@@ -1,13 +1,16 @@
 package com.classifieds;
 
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class BaseControllerTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	@Autowired
+	private BaseController basaController;
+	
+	@Test
+	public void getHomeTest(){
+		basaController.getHome();
 	}
 
 }
