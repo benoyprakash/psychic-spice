@@ -6,21 +6,24 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate4.HibernateExceptionTranslator;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.jolbox.bonecp.BoneCPDataSource;
 
 @Configuration
-// @EnableTransactionManagement
-// @ImportResource( { "classpath:application-context.xml" } )
-// @ComponentScan(basePackages = "com.basa")
-// @PropertySource({
-// "classpath:message.properties","classpath:application.properties" })
+@EnableTransactionManagement
+@ImportResource( { "classpath:application-context.xml" } )
+@ComponentScan(basePackages = "com.classifieds")
+@PropertySource({"classpath:application.properties" })
 public class ApplicationConfiguration {
 
 	private static final String PROPERTY_NAME_DATABASE_DRIVER = "db.driver";
@@ -37,6 +40,10 @@ public class ApplicationConfiguration {
 	private static final String PROPERTY_NAME_DATABASE_MAX_CONNECTION = "db.connection.max";
 	private static final String PROPERTY_NAME_HIBERNATE_AUTO = "hibernate.hbm2ddl.auto";
 
+	public ApplicationConfiguration(){
+		
+	}
+	
 	@Resource
 	private Environment environment;
 
@@ -63,10 +70,6 @@ public class ApplicationConfiguration {
 	public JpaTransactionManager transactionManager()
 			throws ClassNotFoundException {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
-
-		// transactionManager.setEntityManagerFactory(entityManagerFactoryBean()
-		// .getObject());
-
 		return transactionManager;
 	}
 
@@ -79,8 +82,7 @@ public class ApplicationConfiguration {
 		entityManagerFactoryBean
 				.setPackagesToScan(environment
 						.getRequiredProperty(PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN));
-		// entityManagerFactoryBean
-		// .setPersistenceProviderClass(HibernatePersistence.class);
+		
 		Properties jpaProterties = new Properties();
 		jpaProterties.put(PROPERTY_NAME_HIBERNATE_DIALECT, environment
 				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
