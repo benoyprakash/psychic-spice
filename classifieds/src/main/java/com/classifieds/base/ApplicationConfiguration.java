@@ -66,39 +66,39 @@ public class ApplicationConfiguration {
 		return dataSource;
 	}
 
-	@Bean
-	public JpaTransactionManager transactionManager()
-			throws ClassNotFoundException {
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		return transactionManager;
-	}
+//	@Bean
+//	public JpaTransactionManager transactionManager()
+//			throws ClassNotFoundException {
+//		JpaTransactionManager transactionManager = new JpaTransactionManager();
+//		return transactionManager;
+//	}
 
-	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean()
-			throws ClassNotFoundException {
-		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-
-		entityManagerFactoryBean.setDataSource(dataSource());
-		entityManagerFactoryBean
-				.setPackagesToScan(environment
-						.getRequiredProperty(PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN));
-		
-		Properties jpaProterties = new Properties();
-		jpaProterties.put(PROPERTY_NAME_HIBERNATE_DIALECT, environment
-				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
-		jpaProterties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, environment
-				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_FORMAT_SQL));
-		jpaProterties.put(PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY, environment
-				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY));
-		jpaProterties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, environment
-				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
-		jpaProterties.put(PROPERTY_NAME_HIBERNATE_AUTO,
-				environment.getRequiredProperty(PROPERTY_NAME_HIBERNATE_AUTO));
-
-		entityManagerFactoryBean.setJpaProperties(jpaProterties);
-
-		return entityManagerFactoryBean;
-	}
+//	@Bean
+//	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean()
+//			throws ClassNotFoundException {
+//		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+//
+//		entityManagerFactoryBean.setDataSource(dataSource());
+//		entityManagerFactoryBean
+//				.setPackagesToScan(environment
+//						.getRequiredProperty(PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN));
+//		
+//		Properties jpaProterties = new Properties();
+//		jpaProterties.put(PROPERTY_NAME_HIBERNATE_DIALECT, environment
+//				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
+//		jpaProterties.put(PROPERTY_NAME_HIBERNATE_FORMAT_SQL, environment
+//				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_FORMAT_SQL));
+//		jpaProterties.put(PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY, environment
+//				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_NAMING_STRATEGY));
+//		jpaProterties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, environment
+//				.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
+//		jpaProterties.put(PROPERTY_NAME_HIBERNATE_AUTO,
+//				environment.getRequiredProperty(PROPERTY_NAME_HIBERNATE_AUTO));
+//
+//		entityManagerFactoryBean.setJpaProperties(jpaProterties);
+//
+//		return entityManagerFactoryBean;
+//	}
 
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer properties() {
