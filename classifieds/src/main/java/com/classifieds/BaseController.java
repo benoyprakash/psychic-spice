@@ -12,7 +12,7 @@ public class BaseController {
 	private static Logger logger = LoggerFactory
 			.getLogger(BaseController.class);
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/homeTrial", method = RequestMethod.GET)
 	public void getHome() {
 		logger.info("Request received - \"/home\"");
 	}

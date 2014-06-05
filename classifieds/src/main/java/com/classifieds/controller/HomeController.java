@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller(value = "/home")
+@Controller
+@RequestMapping(value = "/home")
 public class HomeController {
 	
 	private static Logger logger = LoggerFactory.getLogger(HomeController.class);
