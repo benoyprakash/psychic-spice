@@ -8,8 +8,8 @@
 
   <!-- the application context definition for the springapp DispatcherServlet -->
   
-<!-- 
   	<import resource="application-security.xml" />
+	<!-- 
 	<jpa:repositories base-package="com.basa.emr.repository" />
- -->
+	 -->
 </beans>
