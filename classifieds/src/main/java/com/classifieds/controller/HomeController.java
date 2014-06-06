@@ -16,8 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/home")
 public class HomeController {
-	
-	private static Logger logger = LoggerFactory.getLogger(HomeController.class);
+
+	private static Logger logger = LoggerFactory
+			.getLogger(HomeController.class);
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView getHome(HttpServletRequest request) {
