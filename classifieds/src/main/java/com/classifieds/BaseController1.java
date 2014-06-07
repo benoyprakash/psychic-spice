@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class BaseController {
+public class BaseController1 {
 
 	private static Logger logger = LoggerFactory
-			.getLogger(BaseController.class);
+			.getLogger(BaseController1.class);
 
 	@RequestMapping(value = "/homeTrial", method = RequestMethod.GET)
 	public void getHome() {

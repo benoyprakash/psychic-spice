@@ -2,28 +2,31 @@ package com.classifieds.controller;
 
 
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-
-@Controller
-public class AuthenticationController {
-
-	@RequestMapping(method = RequestMethod.GET)
-	public String authenticator(ModelMap model,
-			final RedirectAttributes redirectAttributes, HttpServletRequest request) {
-//		CustomUserDetails userDetails = this.getUserDetails();
+//import javax.servlet.http.HttpServletRequest;
+//
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.ModelMap;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+//
+//import com.classifieds.authentication.SystemUserDetails;
+//
+//
+//@Controller
+//public class AuthenticationController extends BaseController{
+//
+//	@RequestMapping(method = RequestMethod.GET)
+//	public String authenticator(ModelMap model,
+//			final RedirectAttributes redirectAttributes, HttpServletRequest request) {
+//		SystemUserDetails userDetails = getUserDetails();
 //		if (userDetails == null) {
 //			return LOGIN_VIEW;
-//		} else if (userDetails.getUserAccount().getUserAccountLocked() > 0) {
-		SecurityContextHolder.clearContext();
-			// TODO Move this to message.properties.
+//		}
+//		else if (userDetails.getUserAccount().getUserAccountLocked() > 0) {
+//		SecurityContextHolder.clearContext();
+//			// TODO Move this to message.properties.
 //			model.addAttribute(MESSAGE, userAccountIsLocked);
 //			return ERROR_VIEW;
 //		} else if (userService.checkDatabase(
@@ -60,10 +63,10 @@ public class AuthenticationController {
 //				return REDIRECT + PROFILE_PATH;
 //			} else
 //				auditUser(userDetails);
-			return /*REDIRECT + ORG_FETCH_PATH*/ "";
+//			return /*REDIRECT + ORG_FETCH_PATH*/ "";
 //		}
-	}
-
+//	}
+//
 //	private void auditUser(CustomUserDetails userDetails) {
 //		auditService.updateAuditLogByEntityId(
 //				Constant.ENTITY_TYPE_USERACCOUNT,
@@ -267,5 +270,5 @@ public class AuthenticationController {
 //				"", userDetails.getUserAccount(), new Date(), null);
 //		return "Success";
 //	}
-	
-}
+//	
+//}
