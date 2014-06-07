@@ -10,21 +10,19 @@
 <link href="<c:url value="/resources/css/bootstrap.css" />"
 	rel="stylesheet" type="text/css" />
 <link
-	href="<c:url value="/resources/css/bootstrap-responsive.min.css" />"
-	rel="stylesheet" type="text/css" />
-<link href="<c:url value="/resources/css/select2.css" />"
+	href="<c:url value="/resources/css/bootstrap-theme.css" />"
 	rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1>Classifieds</h1>
+<h1> Nothing</h1>
 <div>
-	<tiles:insertAttribute name="header" />
-	<tiles:insertAttribute name="body" />
+<%-- 	
+<tiles:insertAttribute name="header" />
+<tiles:insertAttribute name="body" /> 
+--%>
 </div>
 
-<script src="<c:url value="/resources/js/jQuery-1.8.2.min.js"/>"></script>
-<script src="<c:url value="/resources/js/validation/jquery.validate.min.js"/>"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="/resources/js/select2.min.js"/>"></script>
+<script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery-1.11.1.js"/>"></script>
 </body>
 </html>
