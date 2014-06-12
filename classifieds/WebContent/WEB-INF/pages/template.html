@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../resources/css/select2.css" />
+<link rel="stylesheet" type="text/css" href="../../resources/css/customcss.css" />
 
 </head>
 <body>
@@ -25,10 +26,18 @@
           <li class="divider-vertical"></li>
           <li><a href="#">More</a></li>
           <li>
-			<select id="locationId" size="4" style="width: 150px; padding-top: 10px;">
+			<select id="locationId" style="width: 150px; padding-top: 12px;">
 				<option value="" selected="selected">Select a location</option>
-				<option value="2">Cochin</option>
-				<option value="3">Palarivattom</option>
+				<option value="1">Cochin</option>
+				<option value="2">Fort Kochi</option>
+				<option value="3">Palluruthy</option>
+				<option value="4">Kaloor</option>
+				<option value="5">Aluva</option>
+				<option value="6">Paravur</option>
+				<option value="7">Angamaly</option>
+				<option value="8">Palarivattom</option>
+				
+				
 			</select> 
           </li>
         </ul>
@@ -38,8 +47,8 @@
 	<!-- body -->
       <div class="jumbotron text-center alert-info">
      	 <div class="container">
-			<h1>Full Width Layout</h1>
-			<p class="lead">The Bootstrap 3 grid is fluid only. This example shows how to use a custom container to create a fixed width layout.</p>
+			<h1>Want to buy or sell something ???</h1>
+			<p class="lead">Post an advertisement, get your customers :)</p>
 			<p>	
 				<span class="col-lg-4"></span>
 				<span class="col-lg-4"><a class="btn btn-large btn-success btn-block" href="http://bootply.com/tagged/bootstrap-3" target="ext">Post your Ads</a></span>
@@ -47,7 +56,7 @@
 			</p>
 		</div>	
       </div>
-      	<div class="container">
+      	<div class="container hidden">
       	<div class="alert alert-warning alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<strong>Welcome!</strong> To a new place to post your ads, and get benefited..!
@@ -55,94 +64,106 @@
 		</div>
 		<!-- body : category row 1 -->
 		<div class="container">	
-		<div class="row">
-			<div class="col-lg-4">
-				<h4>Home &amp; Lifestyle</h4>
-				<p>Responsive by default, and a clean "flat" design.</p>
-				
-				<h4>Powerful Grid</h4>
-				<p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="row">
+						<div class="col-lg-4">
+							<h4>
+							<span class="glyphicon glyphicon-sound-6-1"></span>
+							Home &amp; Lifestyle</h4>
+							<p><a href="" title="">Furnitures</a></p>
+							<p><a href="" title="">Kitchen wares</a></p>
+							<p><a href="" title="">Floor Decors</a></p>
+							<p><a href="" title="">Clothings</a></p>
+						</div>
+						<div class="col-lg-4">
+							<h4>Mobiles &amp; Gadgets</h4>
+							<p><a href="" title="">Mobiles</a></p>
+							<p><a href="" title="">Mobile Accessories</a></p>
+							<p><a href="" title="">Tablets</a></p>
+							<p><a href="" title="">Headphones</a></p>
+						</div>
+						<div class="col-lg-4">
+							<h4>Vehicles</h4>
+							<p><a href="" title="">Cars</a></p>
+							<p><a href="" title="">Bikes</a></p>
+							<p><a href="" title="">Bicycles</a></p>
+							<p><a href="" title="">Spares &amp; Tools</a></p>
+						</div>
+					</div>
+					
+					<div class="row">
+					<hr>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-4">
+							<h4>Real Estate</h4>
+							<p><a href="" title="">Houses</a></p>
+							<p><a href="" title="">Flats &amp; villas</a></p>
+							<p><a href="" title="">Hostels &amp PG</a></p>
+							<p><a href="" title="">Hotels</a></p>
+						</div>
+						<div class="col-lg-4">
+							<h4>Services</h4>
+								<p><a href="" title="">Painting</a></p>
+								<p><a href="" title="">Cleaning</a></p>
+								<p><a href="" title="">Packers &amp; Movers</a></p>
+								<p><a href="" title="">Repairing Services</a></p>
+						</div>
+						<div class="col-lg-4">
+							<h4>Electronics</h4>
+							<p><a href="" title="">Laptops &amp; Computers</a></p>
+							<p><a href="" title="">Pen drives &amp; Hard disk</a></p>
+							<p><a href="" title="">Cameras</a></p>
+							<p><a href="" title="">Video Games</a></p>
+						</div>
+					</div>
+					
+					<div class="row">
+					<hr>
+					</div>					
+					
+					<div class="row">
+						<div class="col-lg-4">
+							<h4>Pets</h4>
+							<p><a href="" title="">Pets</a></p>
+							<p><a href="" title="">Pet food</a></p>
+							<p><a href="" title="">Toys for pets</a></p>
+							<p><a href="" title="">Pet care services</a></p>
+						</div>
+					
+						<div class="col-lg-4">
+							<h4>Books &amp; CDs</h4>
+							<p><a href="" title="">Books / Novels</a></p>
+							<p><a href="" title="">Academic Books</a></p>
+							<p><a href="" title="">Music CDs</a></p>
+							<p><a href="" title="">Softwares</a></p>
+						</div>
+					  
+						<div class="col-lg-4">
+							<h4>Sports, Fitness &amp; Games</h4>
+							<p><a href="" title="">Fitnes Equipments</a></p>
+							<p><a href="" title="">Video games</a></p>
+							<p><a href="" title="">Floor Decors</a></p>
+							<p><a href="" title="">AC - Air Conditioning</a></p>
+						</div>
+					</div>
+
+					<div class="row">
+					<hr>
+					</div>					
+		
+				</div>
+				<div class="col-lg-3 full">
+					Post your Ads :)
+
+				</div>
 			</div>
 		
-			<div class="col-lg-4">
-				<h4>Electronics</h4>
-				<p>New panels, list groups, glyphicons and justified navigation.</p>
-				
-				<h4>Less Bloat</h4>
-				<p>The optimized CSS is in a single file. Glyphicons are now separate.</p>
-			</div>
-			<div class="col-lg-4">
-				<h4>Vehicles</h4>
-				<p>Responsive by default, and a clean "flat" design.</p>
-				
-				<h4>Powerful Grid</h4>
-				<p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
-			</div>
-		</div>
-		<hr>
-		</div>
-		<!-- body : category row 2 -->
-		<div class="container">	
-		<div class="row">
-		  <div class="col-lg-4">
-		    <h4>Real Estate</h4>
-		    <p>Responsive by default, and a clean "flat" design.</p>
-		
-		    <h4>Powerful Grid</h4>
-		    <p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
-		  </div>
-		  
-		  <div class="col-lg-4">
-		    <h4>Entertainment</h4>
-		    <p>Responsive by default, and a clean "flat" design.</p>
-		
-		    <h4>Powerful Grid</h4>
-		    <p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
-		  </div>
-		
-		  <div class="col-lg-4">
-		    <h4>Books &amp; CDs</h4>
-		    <p>New panels, list groups, glyphicons and justified navigation.</p>
-		
-		    <h4>Less Bloat</h4>
-		    <p>The optimized CSS is in a single file. Glyphicons are now separate.</p>
-		  </div>
-		</div>
-		<hr>
-		</div>
-      
-		<!-- body : category row 3 -->
-		<div class="container">	
-		<div class="row">
-			<div class="col-lg-4">
-				<h4>Mobile First</h4>
-				<p>Responsive by default, and a clean "flat" design.</p>
-				
-				<h4>Powerful Grid</h4>
-				<p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
-			</div>
-		
-			<div class="col-lg-4">
-				<h4>New Elements</h4>
-				<p>New panels, list groups, glyphicons and justified navigation.</p>
-				
-				<h4>Less Bloat</h4>
-				<p>The optimized CSS is in a single file. Glyphicons are now separate.</p>
-			</div>
-		  
-			<div class="col-lg-4">
-				<h4>Mobile First</h4>
-				<p>Responsive by default, and a clean "flat" design.</p>
-				
-				<h4>Powerful Grid</h4>
-				<p>3 responsive grid sizes to control the grid layout on tiny, small and large displays.</p>
-			</div>
-		</div>
-		<hr>			
-		</div>
-  
-  
+ </div>
 	<div class="jumbotron text-center" style="margin-bottom: 3px;">
+<!-- 
     	<div>
 			<h1>Moving from Bootstrap 2.x to 3.0</h1>
         	<p class="lead">Everything has changed, so you can't just replace the 2.x with the 3.0 files. The folks at Bootply, the Bootstrap Playground have created a migration guide to help.</p>
@@ -174,11 +195,9 @@
 				</div>
 			</div>
     	</div>
+ -->
     	<div class="container">
     		<div class="row text-center">
-    			<div class="col-lg-1">
-    				<!-- blank -->
-    			</div>    		
     			<div class="col-lg-1">
     				<a href="www.google.com">Help</a>
     			</div>
@@ -188,13 +207,13 @@
     			<div class="col-lg-1">
     				<a href="www.google.com">Post Ads</a>
     			</div>
-    			<div class="col-lg-1">
+    			<div class="col-lg-2">
     				<a href="www.google.com">Tips &amp; Trade offs</a>
     			</div>
     			<div class="col-lg-1">
     				<a href="www.google.com">Pricing</a>
     			</div>
-    			<div class="col-lg-1">
+    			<div class="col-lg-2">
     				<a href="www.google.com">Advertise Here</a>
     			</div>
     			<div class="col-lg-1">
@@ -203,15 +222,9 @@
     			<div class="col-lg-1">
     				<a href="www.google.com">Privacy</a>
     			</div>
-    			<div class="col-lg-1">
+    			<div class="col-lg-2">
     				<a href="www.google.com">User Policy</a>
     			</div>
-    			<div class="col-lg-1">
-    				<a href="www.google.com">Rules</a>
-    			</div>
-    			<div class="col-lg-1">
-    				<!-- blank -->
-    			</div>  
     		</div>
     		<div class="row text-center">
     			Classifieds &trade; - Copyright &reg;
