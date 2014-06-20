@@ -39,4 +39,12 @@
 	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
 	    <put-attribute name="body" value="/WEB-INF/pages/body.jsp" />
 	</definition>
+	
+	<definition name="homepage.view" template="/WEB-INF/pages/home/homePage.jsp">
+	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/body.jsp" />
+	</definition>
+	
+	
+
 </tiles-definitions>
