@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -5,10 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Hi-Post Your Ads for Free..!</title>
-<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="../../resources/css/select2.css" />
-<link rel="stylesheet" type="text/css" href="../../resources/css/customcss.css" />
+<link rel="stylesheet" type="text/css" href='<c:url value="resources/css/bootstrap.min.css" />' />
+<link rel="stylesheet" type="text/css" href='<c:url value="resources/css/bootstrap-theme.min.css" />' />
+<link rel="stylesheet" type="text/css" href='<c:url value="resources/css/select2.css" />' >
+<link rel="stylesheet" type="text/css" href='<c:url value="resources/css/customcss.css" />' />
+<c:url value="" />
+
+
+
 
 </head>
 <body>
@@ -254,11 +260,11 @@
 		</div>
 </div>
 </div>
-<script type="text/javascript" src="../../resources/js/jquery-1.11.1.min.js" ></script>
-<script type="text/javascript" src="../../resources/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src='<c:url value="resources/js/jquery-1.11.1.min.js" />' ></script>
+<script type="text/javascript" src='<c:url value="resources/js/bootstrap.min.js" />' ></script>
 
-<script type="text/javascript" src="../../resources/js/alert.js" ></script>	
-<script type="text/javascript" src="../../resources/js/select2.js"></script>
+<script type="text/javascript" src='<c:url value="resources/js/alert.js" />' ></script>	
+<script type="text/javascript" src='<c:url value="resources/js/select2.js" />' ></script>
 
 <script type="text/javascript">
 	$(document).ready(function() { 
