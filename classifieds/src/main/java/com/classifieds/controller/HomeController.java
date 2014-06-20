@@ -22,11 +22,26 @@ public class HomeController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView getHome(HttpServletRequest request) {
-
+		logger.info("getHome() requested by : "+ getIpAddress(request));
 		ModelMap mMap = new ModelMap();
 		mMap.put(USER_DATA, "benoy");
 
 		logger.info("End of getHome() function.");
 		return new ModelAndView(HOME_VIEW, mMap);
+	}
+	
+	public String getIpAddress(HttpServletRequest request){
+		// request.getHeader("HTTP_X_FORWARDED_FOR");
+		// request.getHeader("HTTP_CLIENT_IP");
+		// request.getHeader("WL-Proxy-Client-IP");
+		// request.getHeader("Proxy-Client-IP");
+		String ipAddress = request.getHeader("x-forwarded-for");
+        if (ipAddress == null) {
+            ipAddress = request.getHeader("X_FORWARDED_FOR");
+            if (ipAddress == null){
+                ipAddress = request.getRemoteAddr();
+            }
+        }   
+		   return ipAddress;
 	}
 }
