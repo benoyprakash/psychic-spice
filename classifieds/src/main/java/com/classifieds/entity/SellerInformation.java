@@ -16,7 +16,7 @@ public class SellerInformation {
 	private String name;
 	private String landPhone;
 	private String mobilePhone;
-	
+
 	@Id
 	@Column(name = "seller")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,6 +36,7 @@ public class SellerInformation {
 	public void setSellerType(boolean sellerType) {
 		this.sellerType = sellerType;
 	}
+
 	@Column(name = "name")
 	public String getName() {
 		return name;
@@ -44,6 +45,7 @@ public class SellerInformation {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Column(name = "land_phone_no")
 	public String getLandPhone() {
 		return landPhone;
@@ -52,6 +54,7 @@ public class SellerInformation {
 	public void setLandPhone(String landPhone) {
 		this.landPhone = landPhone;
 	}
+
 	@Column(name = "mobile_no")
 	public String getMobilePhone() {
 		return mobilePhone;
