@@ -2,6 +2,9 @@ package com.classifieds.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class UserAccount {
@@ -11,6 +14,8 @@ public class UserAccount {
 	private String eMailId;
 	private String password;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	public long getUserId() {
 		return userId;
