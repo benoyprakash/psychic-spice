@@ -18,8 +18,8 @@ public class SellerInformation {
 	private String mobilePhone;
 
 	@Id
-	@Column(name = "seller")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "seller")
 	public long getSellerInfoId() {
 		return sellerInfoId;
 	}
