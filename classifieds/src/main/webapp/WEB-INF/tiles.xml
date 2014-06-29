@@ -13,11 +13,12 @@
 	</definition>
 	
 	<definition name="searchResult.view" template="/WEB-INF/pages/commons/search-result-layout.jsp">
-		<put-attribute name="headerBar" value="/WEB-INF/pages/commons/headeBarSearchResult.jsp" />
+		<put-attribute name="headerBar" value="/WEB-INF/pages/commons/headerBarSearchResult.jsp" />
 		<put-attribute name="leftMenu" value="" />
 		<put-attribute name="rightPanelSearchResults" value="" />
 		<put-attribute name="footerBar" value="/WEB-INF/pages/commons/footerBarSearchResult.jsp" />		  
 	</definition>
+	
 	<definition name="homeAppResults.view" extends="searchResult.view">
 		<put-attribute name="leftMenu" value="/WEB-INF/pages/homeAppliance/homeApplianceLeftPanel.jsp" />
 		<put-attribute name="rightPanelSearchResults" value="/WEB-INF/pages/homeAppliance/homeApplianceRightPanel.jsp" />
