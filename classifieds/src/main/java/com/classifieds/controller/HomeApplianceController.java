@@ -17,10 +17,10 @@ import com.classifieds.service.UtilityServices;
 
 @Controller
 @RequestMapping(value = "/homeApp")
-public class HomeController {
+public class HomeApplianceController {
 
 	private static Logger logger = LoggerFactory
-			.getLogger(HomeController.class);
+			.getLogger(HomeApplianceController.class);
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView getHome(HttpServletRequest request) {
