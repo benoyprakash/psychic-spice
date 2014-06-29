@@ -12,9 +12,7 @@
 	    <put-attribute name="fullPage" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
 	</definition>
 	
-	<definition name="homepage.view" template="/WEB-INF/pages/home/homePage.jsp">
-	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
-	    <put-attribute name="body" value="/WEB-INF/pages/body.jsp" />
+	<definition name="homeAppResults.view" template="/WEB-INF/pages/home/homeAppSearchResult.jsp">
 	</definition>
 	
 	
