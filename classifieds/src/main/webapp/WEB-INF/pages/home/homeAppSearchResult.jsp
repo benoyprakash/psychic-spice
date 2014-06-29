@@ -49,7 +49,7 @@
 	<!-- body -->
       <div class="jumbotron text-center alert-info">
      	 <div class="container">
-			<h1>Want to buy or sell something ???</h1>
+			<h1>Home Appliance - Want to buy or sell something ???</h1>
 			<p class="lead">Post an advertisement, get your customers :)</p>
 			<p>	
 				<span class="col-lg-4"></span>
