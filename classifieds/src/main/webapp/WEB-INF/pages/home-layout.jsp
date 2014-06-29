@@ -6,23 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link href="<c:url value="/resources/css/bootstrap.css" />"
-	rel="stylesheet" type="text/css" />
-<link
-	href="<c:url value="/resources/css/bootstrap-theme.css" />"
-	rel="stylesheet" type="text/css" />
+<title>Hi Classifieds</title>
 </head>
 <body>
-<h1> Nothing</h1>
 <div>
-<%-- 	
-<tiles:insertAttribute name="header" />
-<tiles:insertAttribute name="body" /> 
---%>
+<tiles:insertAttribute name="fullPage" /> 
 </div>
-
-<script src="<c:url value="/resources/js/bootstrap.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery-1.11.1.js"/>"></script>
 </body>
 </html>
