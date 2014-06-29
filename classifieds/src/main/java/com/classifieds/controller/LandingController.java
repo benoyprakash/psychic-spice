@@ -11,9 +11,10 @@ import com.classifieds.controller.BaseController;
 import static com.classifieds.utils.Views.LANDING_PAGE_VIEW;
 
 @Controller
-@RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
+@RequestMapping("/home")
 public class LandingController extends BaseController {
 
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView landingPage(HttpServletRequest request) {
 		ModelMap model = new ModelMap();
 		model.put("header", "header");

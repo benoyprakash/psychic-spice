@@ -24,6 +24,7 @@
 	<security:http pattern="/js/**" security="none" />
 	<security:http pattern="/img/**" security="none" />
 
+<!-- 
 	<security:http auto-config="true">
 		<security:intercept-url pattern="/**" access="ROLE_USER" />
 		<security:form-login login-page="/login"
@@ -32,6 +33,7 @@
 		<security:access-denied-handler
 			error-page="/accessDenied" />
 	</security:http>
+ -->
 
 	<security:authentication-manager>
 		<security:authentication-provider

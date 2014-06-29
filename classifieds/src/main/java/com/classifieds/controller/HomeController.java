@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.classifieds.service.UtilityServices;
 
 @Controller
-@RequestMapping(value = "/home")
+@RequestMapping(value = "/homeApp")
 public class HomeController {
 
 	private static Logger logger = LoggerFactory

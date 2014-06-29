@@ -30,9 +30,9 @@
 	    <put-attribute name="body" value="" />
 	</definition>
 	
-	<definition name="landing.view" extends="beforelogin.definition">
+	<definition name="landingPageView.view" extends="beforelogin.definition">
 	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
-	    <put-attribute name="body" value="/WEB-INF/pages/body.jsp" />
+	    <put-attribute name="body" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
 	</definition>
 	
 	<definition name="home.view" extends="beforelogin.definition">
