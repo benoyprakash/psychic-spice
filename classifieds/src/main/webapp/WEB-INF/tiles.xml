@@ -12,9 +12,11 @@
 	    <put-attribute name="fullPage" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
 	</definition>
 	
-	<definition name="homeAppResults.view" template="/WEB-INF/pages/home/homeAppSearchResult.jsp">
+	<definition name="homeAppResults.view" template="/WEB-INF/pages/commons/search-result-layout.jsp">
+		  <put-attribute name="headerBar" value="/WEB-INF/pages/commons/headeBarSearchResult.jsp" />
+		  <put-attribute name="leftMenu" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
+		  <put-attribute name="rightPanelSearchResults" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
+		  <put-attribute name="footerBar" value="/WEB-INF/pages/commons/footerBarSearchResult.jsp" />		  
 	</definition>
 	
-	
-
 </tiles-definitions>
