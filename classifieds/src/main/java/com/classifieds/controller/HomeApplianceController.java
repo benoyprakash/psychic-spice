@@ -1,7 +1,7 @@
 package com.classifieds.controller;
 
 import static com.classifieds.utils.Constants.USER_DATA;
-import static com.classifieds.utils.Views.HOME_VIEW;
+import static com.classifieds.utils.Views.HOME_APP_SEARCH_RESULT_VIEW;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,6 +30,6 @@ public class HomeApplianceController {
 		mMap.put(USER_DATA, "benoy");
 
 		logger.info("End of getHome() function.");
-		return new ModelAndView(HOME_VIEW, mMap);
+		return new ModelAndView(HOME_APP_SEARCH_RESULT_VIEW, mMap);
 	}
 }
