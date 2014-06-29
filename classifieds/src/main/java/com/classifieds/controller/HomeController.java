@@ -32,5 +32,4 @@ public class HomeController {
 		logger.info("End of getHome() function.");
 		return new ModelAndView(HOME_VIEW, mMap);
 	}
-
 }
