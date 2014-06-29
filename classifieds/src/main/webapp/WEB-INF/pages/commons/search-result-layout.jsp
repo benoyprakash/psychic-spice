@@ -7,10 +7,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Hi-Post Your Ads for Free..!</title>
-<link rel="stylesheet" type="text/css" href="../../../resources/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../../../resources/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="../../../resources/css/select2.css" />
-<link rel="stylesheet" type="text/css" href="../../../resources/css/customcss.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/select2.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/customcss.css" />
 </head>
 <body>
 <div>
@@ -41,11 +41,11 @@
 
 
 
-<script type="text/javascript" src="../../../resources/js/jquery-1.11.1.min.js" ></script>
-<script type="text/javascript" src="../../../resources/js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js" ></script>
 
-<script type="text/javascript" src="../../../resources/js/alert.js" ></script>	
-<script type="text/javascript" src="../../../resources/js/select2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/alert.js" ></script>	
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/select2.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() { 
