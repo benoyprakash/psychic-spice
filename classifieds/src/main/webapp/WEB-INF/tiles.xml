@@ -4,40 +4,12 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-<!-- 
-    <definition name="beforelogin.base.definition" template="/WEB-INF/common/main-layout.jsp">
-		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/WEB-INF/common/navbar.jsp" />
-		<put-attribute name="subheader" value="" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/WEB-INF/common/appFooter.jsp" />
-	</definition>
-	<definition name="afterlogin.base.definition" template="/WEB-INF/common/main-layout.jsp">
-		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/WEB-INF/common/menu.jsp" />
-		<put-attribute name="subheader" value="" />
-		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="" />
-	</definition>
-	 -->
-
 	<definition name="beforelogin.definition" template="/WEB-INF/pages/home-layout.jsp">
-	    <put-attribute name="header" value="" />
-	    <put-attribute name="body" value="" />
-	</definition>
-	<definition name="afterlogin.definition" template="/WEB-INF/pages/home-layout.jsp">
-	    <put-attribute name="header" value="" />
 	    <put-attribute name="body" value="" />
 	</definition>
 	
 	<definition name="landingPageView.view" extends="beforelogin.definition">
-	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
-	    <put-attribute name="body" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
-	</definition>
-	
-	<definition name="home.view" extends="beforelogin.definition">
-	    <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
-	    <put-attribute name="body" value="/WEB-INF/pages/body.jsp" />
+	    <put-attribute name="fullPage" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
 	</definition>
 	
 	<definition name="homepage.view" template="/WEB-INF/pages/home/homePage.jsp">
