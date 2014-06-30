@@ -20,6 +20,12 @@
 		</div>
 		<div class="jumbotron text-center alert-info">
 			<div class="container">
+				<div class="row">
+					<tiles:insertAttribute name="searchBoxRow" />
+				</div>
+			</div>	
+		</div>
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
 					<tiles:insertAttribute name="leftMenu" />
@@ -27,8 +33,7 @@
 				<div class="col-lg-9">
 					<tiles:insertAttribute name="rightPanelSearchResults" />
 				</div>
-				</div>
-			</div>	
+			</div>
 		</div>
 		<div class="jumbotron text-center" style="margin-bottom: 3px;">
 			<tiles:insertAttribute name="footerBar" /> 

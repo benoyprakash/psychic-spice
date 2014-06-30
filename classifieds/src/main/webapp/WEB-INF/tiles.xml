@@ -14,6 +14,7 @@
 	
 	<definition name="searchResult.view" template="/WEB-INF/pages/commons/search-result-layout.jsp">
 		<put-attribute name="headerBar" value="/WEB-INF/pages/commons/headerBarSearchResult.jsp" />
+		<put-attribute name="searchBoxRow" value="" />
 		<put-attribute name="leftMenu" value="" />
 		<put-attribute name="rightPanelSearchResults" value="" />
 		<put-attribute name="footerBar" value="/WEB-INF/pages/commons/footerBarSearchResult.jsp" />		  
