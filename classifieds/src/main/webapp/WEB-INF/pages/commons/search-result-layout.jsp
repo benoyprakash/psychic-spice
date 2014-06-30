@@ -27,7 +27,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-lg-2">
 					<tiles:insertAttribute name="leftMenu" />
 				</div>
 				<div class="col-lg-9">
