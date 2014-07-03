@@ -60,11 +60,11 @@
 			allowClear: true	
  		}); 
 			
-		/*
+		
 		$("div[id^='select']").select2({
 				allowClear: true
 			}); 
-		*/
+		
 		});
 	
 	
