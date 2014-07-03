@@ -163,7 +163,7 @@
 		</div>
 	</div>
 	
-		<div class="row">
+	<div class="row">
 		<div class="list-group">
 			<div class="list-group-item active" >
 			   Price Range
@@ -183,5 +183,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>
