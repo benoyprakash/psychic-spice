@@ -54,11 +54,20 @@
 
 <script type="text/javascript">
 	$(document).ready(function() { 
-		$("#locationId").select2({
+		
+ 		$("#selectlocationId").select2({
 			placeholder: "Select a State",
-			allowClear: true
-			});
+			allowClear: true	
+ 		}); 
+			
+		/*
+		$("div[id^='select']").select2({
+				allowClear: true
+			}); 
+		*/
 		});
+	
+	
 </script>
 </body>
 </html>

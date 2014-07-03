@@ -7,7 +7,7 @@
           <li class="divider-vertical"></li>
           <li><a href="#">Sign In</a></li>
           <li>
-			<select id="locationId" style="width: 150px; padding-top: 12px;">
+			<select id="selectlocationId" style="width: 150px; padding-top: 12px;">
 				<option value="" selected="selected">Select a location</option>
 				<option value="1">Cochin</option>
 				<option value="2">Fort Kochi</option>

@@ -1,87 +1,187 @@
-<div class="container-full" style="color: green;">
-	<div class="row">Category</div>
+<div class="container-full">
 	<div class="row">
-		<select>
-			<option>Furniture</option>
-			<option>Washing machine</option>
-			<option>Kitchen wares</option>
-
-		</select>
-	</div>
-	<hr>
-	<div class="row">Sub Category</div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> <span class="float">abc </span>
-		</div>
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> def
-		</div>
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> ghijk
-		</div>
-	</div>
-	<div class="row">Condition</div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-	</div>
-	
-	<div class="row">Seller Type</div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-		<div class="row"> 
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div> 
-	</div>
-	<div class="row">Location</div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-		<div class="row"> 
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div> 
-	</div>
-	<div class="row">I want to : </div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-		<div class="row"> 
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div> 
-	</div>
-	<div class="row">Price Range</div>
-	<div class="row">
-		<div class="row">
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div>
-		<div class="row"> 
-			<input type="checkbox" class="radio" value="1" name="fooby[1][]" />
-		</div> 
-	</div>
-	
-	<div>
 		<div class="list-group">
-			<a href="#" class="list-group-item active">
-			   Cras justo odio
-			</a>
-			<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-			<a href="#" class="list-group-item">Morbi leo risus</a>
-			<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-			<a href="#" class="list-group-item">Vestibulum at eros</a>
+			<div class="list-group-item active">
+			   Category
+			</div>
+			<div class="list-group-item">
+				<select id="selectCategory">
+					<option>Furniture</option>
+					<option>Washing machine</option>
+					<option>Kitchen wares</option>
+				</select>
+			</div>
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active" >
+			   Sub Category 
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						def
+					</div>					
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						def
+					</div>					
+				</div>				
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						def
+					</div>					
+				</div>				
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active" >
+			   Product Status
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						New
+					</div>					
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Used
+					</div>					
+				</div>				
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Search both
+					</div>					
+				</div>				
+			</div>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active" >
+			   Seller Type
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Individual
+					</div>					
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Commercial
+					</div>					
+				</div>				
+			</div>
 		</div>
 	</div>
 	
 
-
-
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active">
+			   Location
+			</div>
+			<div class="list-group-item">
+				<select id="selectCategory">
+					<option>Furniture</option>
+					<option>Washing machine</option>
+					<option>Kitchen wares</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active" >
+			   I want to : 
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Buy
+					</div>					
+				</div>
+			</div>
+			<div class="list-group-item">
+				<div class="row">
+					<div class="col-lg-2">
+						<input type="checkbox" class="radio" value="1" name="fooby[1][]" /> 
+					</div>
+					<div class="col-lg-10">
+						Sell
+					</div>					
+				</div>				
+			</div>
+		</div>
+	</div>
+	
+		<div class="row">
+		<div class="list-group">
+			<div class="list-group-item active" >
+			   Price Range
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-5">
+						<input type="text" class="form-control" style="padding: 3px 3px" placeholder="min">
+					</div>
+					<div class="col-lg-1" style="line-height: 12px;">
+						&nbsp; to &nbsp;
+					</div>	
+					<div class="col-lg-5">
+						<input type="text" class="form-control" style="padding: 3px 3px" placeholder="max">
+					</div>						
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
