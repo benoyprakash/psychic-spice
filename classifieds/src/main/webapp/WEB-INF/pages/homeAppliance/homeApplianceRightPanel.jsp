@@ -1,41 +1,97 @@
-<div class="container-full">
+<div class="container-full" style="padding: 0% 0% 0% 2%;">
 	<div class="row hidden">
 		Intentionally left blank
 	</div>
 	<div class="row">
-		<div class="table-responsive">
-		<table class="table table-bordered table-hover">
-			<tbody class="table-hover">
-				<tr class="success"><td class="">1</td></tr>
-				<tr class="warning"><td class="">2</td></tr>
-				<tr class="success"><td class="">3</td></tr>
-				<tr class="warning"><td class="">4</td></tr>
-				<tr class="success"><td class="">5</td></tr>
-			</tbody>
-		</table>
-		</div>
-		
-		<br>
-		<div class="table-responsive">
-			<table class="table table-bordered table-hover">
-				<tr>
-				  <td class="success">1</td>
-				  <td class="warning">2</td>
-				  <td class="success">3</td>
-				  <td class="warning">4</td>
-				  <td class="success">5</td>
-				</tr>
-			</table>
+		<div class="list-group">
+			<div class="list-group-item " >
+			   <strong>We are sorry</strong>
+			</div>
+			<div class="list-group-item"> 
+				<div class="row">
+					<div class="col-lg-8">
+						Currently there are no results matching your criteria.
+					</div>				
+				</div>
+			</div>
 		</div>
 	</div>
-	
+
 	<div class="row">
-		<div class="container container-xs-height">
-		    <div class="row row-xs-height">
-		        <div class="col-xs-6 col-xs-height">sdf</div>
-		        <div class="col-xs-3 col-xs-height col-top">sdf</div>
-		        <div class="col-xs-2 col-xs-height col-middle">sdf</div>
-		        <div class="col-xs-1 col-xs-height col-bottom">dsf</div>
-		    </div>
+		<div class="list-group">
+			<div class="list-group-item " >
+				<strong>Title Hi title, How do you do?</strong>
+			   	<div class="pull-right">
+					Price &nbsp;<strong>0.00</strong>
+				</div>
+			</div>
+			<div class="list-group-item"> 
+				<div class="row row-lg-6">
+					<div class="col-lg-2">
+						<img src="resources/img/twitter.png" alt="" class="img-thumbnail" style="width: 120px; height: 120px;">
+					</div>
+					<div class="col-lg-10">
+						<div></div>
+						This is a good product<br />
+						blaaaaa this is a blaaa and nothing<br />
+						blasss is a very good blasss why not<br />
+						Ph : 0011 - 2233554477<br />
+						<div class="pull-right">05 JUly 2014</div>				
+					</div>			
+				</div>
+							
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item " >
+				<strong>Title Hi title, How do you do?</strong>
+			   	<div class="pull-right">
+					Price &nbsp;<strong>0.00</strong>
+				</div>
+			</div>
+			<div class="list-group-item"> 
+				<div class="row row-lg-6">
+					<div class="col-lg-2">
+						<img src="resources/img/twitter.png" alt="" class="img-thumbnail" style="width: 120px; height: 120px;">
+					</div>
+					<div class="col-lg-10">
+						<div></div>
+						This is a good product<br />
+						blaaaaa this is a blaaa and nothing<br />
+						blasss is a very good blasss why not<br />
+						Ph : 0011 - 2233554477<br />
+						<div class="pull-right">05 JUly 2014</div>				
+					</div>			
+				</div>
+							
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group">
+			<div class="list-group-item " >
+				<strong>Title Hi title, How do you do?</strong>
+			   	<div class="pull-right">
+					Price &nbsp;<strong>0.00</strong>
+				</div>
+			</div>
+			<div class="list-group-item"> 
+				<div class="row row-lg-6">
+					<div class="col-lg-2">
+						<img src="resources/img/twitter.png" alt="" class="img-thumbnail" style="width: 120px; height: 120px;">
+					</div>
+					<div class="col-lg-10">
+						<div></div>
+						This is a good product<br />
+						blaaaaa this is a blaaa and nothing<br />
+						blasss is a very good blasss why not<br />
+						Ph : 0011 - 2233554477<br />
+						<div class="pull-right">05 JUly 2014</div>				
+					</div>			
+				</div>
+							
+			</div>
 		</div>
 	</div>
