@@ -35,9 +35,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="jumbotron text-center" style="margin-bottom: 3px;">
-			<tiles:insertAttribute name="footerBar" /> 
+		<div class="container">
 		</div>
+	</div>
+	<div class="clear jumbotron text-center" style="margin-bottom: 3px;">
+		<tiles:insertAttribute name="footerBar" /> 
 	</div>
 
 </div>
