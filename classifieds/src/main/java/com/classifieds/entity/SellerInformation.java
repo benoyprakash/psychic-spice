@@ -16,6 +16,8 @@ public class SellerInformation {
 	private String name;
 	private String landPhone;
 	private String mobilePhone;
+	private String eMailId;
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,5 +65,15 @@ public class SellerInformation {
 	public void setMobilePhone(String mobilePhone) {
 		this.mobilePhone = mobilePhone;
 	}
+
+	@Column(name = "email")
+	public String geteMailId() {
+		return eMailId;
+	}
+
+	public void seteMailId(String eMailId) {
+		this.eMailId = eMailId;
+	}
+	
 
 }

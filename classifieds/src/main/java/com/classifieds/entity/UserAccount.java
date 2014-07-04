@@ -13,6 +13,7 @@ public class UserAccount {
 	private String userName;
 	private String eMailId;
 	private String password;
+	private String phoneNumber;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,5 +52,15 @@ public class UserAccount {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Column(name = "phone_no")
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
 
 }
