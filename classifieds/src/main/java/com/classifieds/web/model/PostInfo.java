@@ -3,6 +3,7 @@ package com.classifieds.web.model;
 import java.util.Map;
 
 public class PostInfo {
+	// Model Object for creating a new post
 
 	private String adTitle;
 	// condition : new or used

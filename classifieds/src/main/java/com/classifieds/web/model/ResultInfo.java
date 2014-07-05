@@ -1,17 +1,8 @@
-package com.classifieds.entity;
+package com.classifieds.web.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.classifieds.entity.SellerInformation;
 
-@Entity
-@Table(name = "post")
-public class PostEntity {
+public class ResultInfo {
 
 	private long id;
 	private String title;
@@ -25,9 +16,6 @@ public class PostEntity {
 	private int locationId;
 	private SellerInformation seller;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "post_id")
 	public long getId() {
 		return id;
 	}
@@ -36,7 +24,6 @@ public class PostEntity {
 		this.id = id;
 	}
 
-	@Column(name = "title")
 	public String getTitle() {
 		return title;
 	}
@@ -45,7 +32,6 @@ public class PostEntity {
 		this.title = title;
 	}
 
-	@Column(name = "description")
 	public String getDesc() {
 		return desc;
 	}
@@ -54,7 +40,6 @@ public class PostEntity {
 		this.desc = desc;
 	}
 
-	@Column(name = "sub_cat_id")
 	public int getSubCategory() {
 		return subCategory;
 	}
@@ -63,7 +48,6 @@ public class PostEntity {
 		this.subCategory = subCategory;
 	}
 
-	@Column(name = "price")
 	public String getPrice() {
 		return price;
 	}
@@ -72,7 +56,6 @@ public class PostEntity {
 		this.price = price;
 	}
 
-	@Column(name = "pri_image")
 	public String getPrimaryImage() {
 		return primaryImage;
 	}
@@ -81,7 +64,6 @@ public class PostEntity {
 		this.primaryImage = primaryImage;
 	}
 
-	@Column(name = "location")
 	public String getLocation() {
 		return location;
 	}
@@ -90,7 +72,6 @@ public class PostEntity {
 		this.location = location;
 	}
 
-	@Column(name = "seller_type")
 	public int getSellerType() {
 		return sellerType;
 	}
@@ -99,7 +80,6 @@ public class PostEntity {
 		this.sellerType = sellerType;
 	}
 
-	@Column(name = "location_id")
 	public int getLocationId() {
 		return locationId;
 	}
@@ -108,8 +88,6 @@ public class PostEntity {
 		this.locationId = locationId;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "seller", referencedColumnName = "seller_id")
 	public SellerInformation getSeller() {
 		return seller;
 	}

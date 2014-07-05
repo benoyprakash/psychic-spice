@@ -9,7 +9,7 @@ public class BaseReference<E extends BaseReference<E>> {
 
 	private String name;
 
-	private long code;
+	private int code;
 
 	private String label;
 
@@ -33,11 +33,11 @@ public class BaseReference<E extends BaseReference<E>> {
 
 	private static Map<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>> elements = new LinkedHashMap<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>>();
 
-	public BaseReference(final String name, final long code, final String label) {
+	public BaseReference(final String name, final int code, final String label) {
 		this(name, code, label, label);
 	}
 
-	public BaseReference(final String name, final long code, final String label,
+	public BaseReference(final String name, final int code, final String label,
 			final String description) {
 		this.name = name;
 		this.code = code;
@@ -84,7 +84,7 @@ public class BaseReference<E extends BaseReference<E>> {
 		this.name = name;
 	}
 
-	public void setCode(long code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -96,11 +96,15 @@ public class BaseReference<E extends BaseReference<E>> {
 		this.description = description;
 	}
 
+ 	public String toStringLabel() {
+		return label;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (code ^ (code >>> 32));
+		result = prime * result + code;
 		result = prime * result
 				+ ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((label == null) ? 0 : label.hashCode());
@@ -136,11 +140,8 @@ public class BaseReference<E extends BaseReference<E>> {
 			return false;
 		return true;
 	}
-
-	public String toStringLabel() {
-		return label;
-	}
 	
+ 	
 	
 
 }

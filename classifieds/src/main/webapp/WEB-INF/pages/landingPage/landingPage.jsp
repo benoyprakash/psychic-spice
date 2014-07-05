@@ -73,11 +73,12 @@
 							<h4>
 							<span class="glyphicon glyphicon-asterisk">
 							</span>
-							Home Appliances</h4>
-							<p><a href="" title="">Furnitures</a></p>
-							<p><a href="" title="">Kitchen wares</a></p>
-							<p><a href="" title="">Floor Decors</a></p>
-							<p><a href="" title="">Clothings</a></p>
+							<a href="${pageContext.request.contextPath}/homeAppliance">Home Needs</a>
+							</h4>
+							<p><a href="${pageContext.request.contextPath}/homeAppliance?subId=1010" title="">Furnitures</a></p>
+							<p><a href="${pageContext.request.contextPath}/homeAppliance?subId=1012" title="">Kitchen wares</a></p>
+							<p><a href="${pageContext.request.contextPath}/homeAppliance?subId=1014" title="">Home Decors</a></p>
+							<p><h6>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/homeAppliance" title=""><b>+</b>more</a></h6></p>
 						</div>
 						<div class="col-lg-4">
 							<h4>
