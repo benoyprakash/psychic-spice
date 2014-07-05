@@ -73,7 +73,7 @@
 							<h4>
 							<span class="glyphicon glyphicon-asterisk">
 							</span>
-							Home &amp; Lifestyle</h4>
+							Home Appliances</h4>
 							<p><a href="" title="">Furnitures</a></p>
 							<p><a href="" title="">Kitchen wares</a></p>
 							<p><a href="" title="">Floor Decors</a></p>
