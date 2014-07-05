@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class BaseEnum<E extends BaseEnum<E>> {
+public class BaseReference<E extends BaseReference<E>> {
 
 	private String name;
 
@@ -31,48 +31,48 @@ public class BaseEnum<E extends BaseEnum<E>> {
 		return description;
 	}
 
-	private static Map<Class<? extends BaseEnum<?>>, Map<String, BaseEnum<?>>> elements = new LinkedHashMap<Class<? extends BaseEnum<?>>, Map<String, BaseEnum<?>>>();
+	private static Map<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>> elements = new LinkedHashMap<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>>();
 
-	public BaseEnum(final String name, final long code, final String label) {
+	public BaseReference(final String name, final long code, final String label) {
 		this(name, code, label, label);
 	}
 
-	public BaseEnum(final String name, final long code, final String label,
+	public BaseReference(final String name, final long code, final String label,
 			final String description) {
 		this.name = name;
 		this.code = code;
 		this.label = label;
 		this.description = description;
-		Map<String, BaseEnum<?>> typeElements = elements.get(getClass());
+		Map<String, BaseReference<?>> typeElements = elements.get(getClass());
 		if (typeElements == null) {
-			typeElements = new LinkedHashMap<String, BaseEnum<?>>();
+			typeElements = new LinkedHashMap<String, BaseReference<?>>();
 			elements.put(getMasterCodesClass(), typeElements);
 		}
 		typeElements.put(name, this);
 	}
 
-	public BaseEnum() {
+	public BaseReference() {
 		super();
 	}
 
 	@SuppressWarnings("unchecked")
-	public static <T extends BaseEnum<T>> T valueOf(Class<T> enumType,
+	public static <T extends BaseReference<T>> T valueOf(Class<T> enumType,
 			String name) {
 		return (T) elements.get(enumType).get(name);
 	}
 
 	@SuppressWarnings("unchecked")
-	private Class<? extends BaseEnum<?>> getMasterCodesClass() {
-		return (Class<? extends BaseEnum<?>>) getClass();
+	private Class<? extends BaseReference<?>> getMasterCodesClass() {
+		return (Class<? extends BaseReference<?>>) getClass();
 	}
 
 	@SuppressWarnings("unchecked")
 	public static <E> E[] values(Class<E> enumType) {
-		Collection<BaseEnum<?>> values = elements.get(enumType).values();
+		Collection<BaseReference<?>> values = elements.get(enumType).values();
 		int n = values.size();
 		E[] typedValues = (E[]) Array.newInstance(enumType, n);
 		int i = 0;
-		for (BaseEnum<?> value : values) {
+		for (BaseReference<?> value : values) {
 			Array.set(typedValues, i, value);
 			i++;
 		}
@@ -116,7 +116,7 @@ public class BaseEnum<E extends BaseEnum<E>> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		BaseEnum other = (BaseEnum) obj;
+		BaseReference other = (BaseReference) obj;
 		if (code != other.code)
 			return false;
 		if (description == null) {
