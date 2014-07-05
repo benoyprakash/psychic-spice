@@ -38,10 +38,8 @@ public class HomeApplianceController extends BaseController{
 		categoryLog(logger, "HomeAppliance",subId);
 		Map<String, Object> mMap = new HashMap<String, Object>();
 		
-		if(subId != null){
-			mMap.put("searchResultList", homeAppService.fetchHomeApplianceResultforSubId(subId));
-		}
-		
+		mMap.put("searchResultList", homeAppService.fetchHomeApplianceResultforSubId(subId));
+				
 		logger.info("End of getHome() function.");
 		return new ModelAndView(HOME_APP_SEARCH_RESULT_VIEW, mMap);
 	}
