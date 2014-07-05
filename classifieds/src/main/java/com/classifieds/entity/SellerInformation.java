@@ -21,7 +21,7 @@ public class SellerInformation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "seller")
+	@Column(name = "seller_id")
 	public long getSellerInfoId() {
 		return sellerInfoId;
 	}

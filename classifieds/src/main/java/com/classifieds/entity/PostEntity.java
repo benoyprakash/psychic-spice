@@ -1,9 +1,16 @@
 package com.classifieds.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "post")
 public class PostEntity {
 
 	private long id;
@@ -18,6 +25,8 @@ public class PostEntity {
 	private int locationId;
 	private SellerInformation seller;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "post_id")
 	public long getId() {
 		return id;
@@ -74,7 +83,7 @@ public class PostEntity {
 		this.location = location;
 	}
 	
-	@Column(name = "sellerType")
+	@Column(name = "seller_type")
 	public int getSellerType() {
 		return sellerType;
 	}
@@ -82,7 +91,7 @@ public class PostEntity {
 		this.sellerType = sellerType;
 	}
 	
-	@Column(name = "locationId")
+	@Column(name = "location_id")
 	public int getLocationId() {
 		return locationId;
 	}
@@ -90,7 +99,7 @@ public class PostEntity {
 		this.locationId = locationId;
 	}
 	@ManyToOne
-	@JoinColumn(name = "seller_id", referencedColumnName = "seller")
+	@JoinColumn(name = "seller", referencedColumnName = "seller_id")
 	public SellerInformation getSeller() {
 		return seller;
 	}
