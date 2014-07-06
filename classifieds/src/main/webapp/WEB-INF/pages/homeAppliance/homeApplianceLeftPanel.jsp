@@ -27,7 +27,7 @@
 					<div class="list-group-item left-menu-block-item-height" > 
 						<div class="row">
 							<div class="col-lg-2">
-								<form:checkbox value="${subCategory.key}" path="subCategory[]"/>
+								<form:checkbox value="${subCategory.key}" path="subCategory"/>
 							</div>
 							<div class="col-lg-8">
 								${subCategory.value.label}

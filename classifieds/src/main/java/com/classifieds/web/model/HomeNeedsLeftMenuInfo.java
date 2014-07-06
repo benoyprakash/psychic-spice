@@ -5,7 +5,7 @@ public class HomeNeedsLeftMenuInfo {
 	// Home Needs category
 
 	private int category;
-	private int subCategory;
+	private int []subCategory;
 	private int childCategory;
 
 	// product status : new / old / both
@@ -28,10 +28,10 @@ public class HomeNeedsLeftMenuInfo {
 	public void setCategory(int category) {
 		this.category = category;
 	}
-	public int getSubCategory() {
+	public int[] getSubCategory() {
 		return subCategory;
 	}
-	public void setSubCategory(int subCategory) {
+	public void setSubCategory(int[] subCategory) {
 		this.subCategory = subCategory;
 	}
 	public int getChildCategory() {

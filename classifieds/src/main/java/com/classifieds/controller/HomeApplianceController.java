@@ -54,7 +54,10 @@ public class HomeApplianceController extends BaseController{
 	@RequestMapping(value = "/homeAppliance/refine", method = RequestMethod.POST)
 	public ModelAndView searchWithLeftMenu(HttpServletRequest request, @ModelAttribute("homeNeedLeftMenu") HomeNeedsLeftMenuInfo leftMenuInfo){
 		Map<String, Object> mMap = new HashMap<String, Object>();
-		
+		mMap.put("searchResultList", null);
+		mMap.put("categoryList", CategoryList.getKeyValueMap());
+		mMap.put("subCategoryList", ReferenceConstants.HomeNeedsCategory.getAllCodes());
+		mMap.put("homeNeedLeftMenu", leftMenuInfo);
 		return new ModelAndView(HOME_APP_SEARCH_RESULT_VIEW, mMap);
 	}
 }
