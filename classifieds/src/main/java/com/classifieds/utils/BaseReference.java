@@ -14,6 +14,8 @@ public class BaseReference<E extends BaseReference<E>> {
 	private String label;
 
 	private String description;
+	
+	private BaseReference object;
 
 	public String getName() {
 		return name;
@@ -30,6 +32,16 @@ public class BaseReference<E extends BaseReference<E>> {
 	public String getDescription() {
 		return description;
 	}
+	
+	public BaseReference getObject() {
+		return object;
+	}
+
+	public void setObject(BaseReference object) {
+		this.object = object;
+	}
+
+
 
 	private static Map<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>> elements = new LinkedHashMap<Class<? extends BaseReference<?>>, Map<String, BaseReference<?>>>();
 
@@ -43,6 +55,21 @@ public class BaseReference<E extends BaseReference<E>> {
 		this.code = code;
 		this.label = label;
 		this.description = description;
+		Map<String, BaseReference<?>> typeElements = elements.get(getClass());
+		if (typeElements == null) {
+			typeElements = new LinkedHashMap<String, BaseReference<?>>();
+			elements.put(getMasterCodesClass(), typeElements);
+		}
+		typeElements.put(name, this);
+	}
+	
+	public BaseReference(final String name, final int code, final String label,
+			final String description, BaseReference refObject) {
+		this.name = name;
+		this.code = code;
+		this.label = label;
+		this.description = description;
+		this.object = refObject;
 		Map<String, BaseReference<?>> typeElements = elements.get(getClass());
 		if (typeElements == null) {
 			typeElements = new LinkedHashMap<String, BaseReference<?>>();

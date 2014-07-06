@@ -1,5 +1,7 @@
 package com.classifieds.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "post")
@@ -24,7 +28,8 @@ public class PostEntity {
 
 	private int locationId;
 	private SellerInformation seller;
-
+	private Date updatedDate;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "post_id")
@@ -117,4 +122,17 @@ public class PostEntity {
 	public void setSeller(SellerInformation seller) {
 		this.seller = seller;
 	}
+	@Column(name = "updated_dttm")
+	@Temporal(TemporalType.TIMESTAMP)
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+	
+	
+	
+	
 }
