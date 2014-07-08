@@ -11,6 +11,9 @@
 	<definition name="landingPageView.view" extends="beforelogin.definition">
 	    <put-attribute name="fullPage" value="/WEB-INF/pages/landingPage/landingPage.jsp" />
 	</definition>
+	<definition name="addPost.view" extends="beforelogin.definition">
+	    <put-attribute name="fullPage" value="/WEB-INF/pages/post/add1.jsp" />
+	</definition>
 	
 	<definition name="searchResult.view" template="/WEB-INF/pages/commons/search-result-layout.jsp">
 		<put-attribute name="headerBar" value="/WEB-INF/pages/commons/headerBarSearchResult.jsp" />

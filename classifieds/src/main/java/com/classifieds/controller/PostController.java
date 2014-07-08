@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.classifieds.service.PostService;
 
+import static com.classifieds.utils.Views.ADD_POST;
 @Controller("/post")
 public class PostController {
 	
@@ -19,13 +20,13 @@ public class PostController {
 	
 	private Logger logger = LoggerFactory.getLogger(PostController.class);
 
-	@RequestMapping(value = "/category/select", method = RequestMethod.GET)
+	@RequestMapping(value = "add/category/select", method = RequestMethod.GET)
 	public ModelAndView selectCategory() {
 		logger.info("selectCategory()");
 		ModelMap mMap = new ModelMap();
 
 		logger.info("End of selectCategory()");
-		return new ModelAndView("", mMap);
+		return new ModelAndView(ADD_POST, mMap);
 	}
 	
 	// according to category, redirect to corresponding controller
