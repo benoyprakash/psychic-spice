@@ -13,6 +13,8 @@ public class PostInfo {
 	// condition : new or used
 	private boolean condition;
 	private String price;
+	// buy / sell
+	private int adType;
 
 	// Address
 	private String locality;
@@ -110,4 +112,11 @@ public class PostInfo {
 	public void setMobilePhone(String mobilePhone) {
 		this.mobilePhone = mobilePhone;
 	}
+	public int getAdType() {
+		return adType;
+	}
+	public void setAdType(int adType) {
+		this.adType = adType;
+	}
+	
 }
