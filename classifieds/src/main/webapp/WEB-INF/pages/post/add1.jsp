@@ -66,7 +66,7 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-lg-12">
-										1. Place your advertisements in the proper categories, and sub categories, which makes easier for your customers to find it.
+										1. Place your advertisements in the proper categories, and sub categories, which makes it easier for your customers to find it.
 									</div>
 								</div>
 							</div>
@@ -74,7 +74,7 @@
 
 				</div>
 				<div class="col-lg-7">
-					<form:form>
+					<form:form modelAttribute="adpost" action="" method="post">
 						<div class="row">
 							<div class="panel panel-success">
 								<div class="panel-heading">
@@ -126,8 +126,22 @@
 										<div class="col-lg-4">
 											What to do ?
 										</div>
+										<div class="col-lg-8">
+											<div class="col-lg-4">
+												<form:radiobutton class="radio" value="1" path="adType" /> Buy
+											</div>
+											<div class="col-lg-4">
+												<form:radiobutton class="radio" value="1" path="adType" /> Sell
+											</div>
+										</div>
+									</div>
+									
+									<div class="row">
 										<div class="col-lg-4">
-											<form:radiobutton class="radio"  path="adType" /> 
+											Condition
+										</div>
+										<div class="col-lg-8">
+											<form:input class="form-control" type="condition" path="adTitle" />
 										</div>
 									</div>
 								</div>
