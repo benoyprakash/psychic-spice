@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -56,16 +57,86 @@
 		<!-- body : category row 1 -->
 		<div class="container">	
 			<div class="row">
-				<div class="col-lg-2">
-					23:01:15.159 [qtp2114881339-25] INFO  c.c.c.HomeApplianceController - call to category : HomeApplianceand subcategory : 1010
+				<div class="col-lg-2" >
+					
+						<div class="panel panel-info">
+							<div class="panel-heading">
+							<h3 class="panel-title">Tips</h3>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-12">
+										1. Place your advertisements in the proper categories, and sub categories, which makes easier for your customers to find it.
+									</div>
+								</div>
+							</div>
+						</div>
 
 				</div>
 				<div class="col-lg-7">
-					<div class="row">
-						<div>
-							<div class="panel panel-primary">
+					<form:form>
+						<div class="row">
+							<div class="panel panel-success">
 								<div class="panel-heading">
-								<h3 class="panel-title">Panel title</h3>
+								<h3 class="panel-title">Categorization</h3>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-4">
+											Catogory
+										</div>
+										<div class="col-lg-4">
+											<select >
+												<option value"">Please Select</option>
+											</select>
+										</div>
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Sub Category
+										</div>
+										<div class="col-lg-4">
+											<select >
+												<option value"">Please Select</option>
+											</select>
+										</div>
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Tags
+										</div>
+										<div class="col-lg-4">
+											<select >
+												<option value"">Please Select</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<div class="row">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+								<h3 class="panel-title">Advertisement</h3>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-4">
+											What to do ?
+										</div>
+										<div class="col-lg-4">
+											<form:radiobutton class="radio"  path="adType" /> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<div class="row">
+							<div class="panel panel-warning">
+								<div class="panel-heading">
+								<h3 class="panel-title">Seller Details</h3>
 								</div>
 								<div class="panel-body">
 									<div class="row">
@@ -78,8 +149,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>					
+						</div>							
+					</form:form>				
 				</div>
 				<div class="col-lg-3 full" >
 					<div class="panel panel-primary">
