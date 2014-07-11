@@ -2,8 +2,10 @@ package com.classifieds.service;
 
 import javax.servlet.http.HttpServletRequest;
 
+import net.tanesha.recaptcha.ReCaptchaImpl;
+import net.tanesha.recaptcha.ReCaptchaResponse;
+
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -45,5 +47,24 @@ public class UtilityServices {
 		}
 		return ipAddress;
 	}
-	
+
+	public boolean validateRecaptcha(HttpServletRequest request) {
+		// https://developers.google.
+		// com/recaptcha/docs/java?csw=1
+		String remoteAddr = request.getRemoteAddr();
+		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		reCaptcha.setPrivateKey("your_private_key");
+
+		String challenge = request.getParameter("recaptcha_challenge_field");
+		String uresponse = request.getParameter("recaptcha_response_field");
+		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr,
+				challenge, uresponse);
+
+		if (reCaptchaResponse.isValid()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

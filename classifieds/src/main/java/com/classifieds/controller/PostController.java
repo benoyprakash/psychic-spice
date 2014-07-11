@@ -7,11 +7,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.classifieds.service.PostService;
+import com.classifieds.service.UtilityServices;
+import com.classifieds.utils.ReferenceConstants;
 import com.classifieds.web.model.PostInfo;
 
 @Controller
@@ -19,6 +22,10 @@ public class PostController {
 
 	@Autowired
 	private PostService postService;
+	
+	@Autowired 
+	private UtilityServices utilityServices;
+	
 
 	private Logger logger = LoggerFactory.getLogger(PostController.class);
 
@@ -36,7 +43,9 @@ public class PostController {
 	public ModelAndView addPost() {
 		logger.info("redirectToCategory()");
 		ModelMap mMap = new ModelMap();
-		mMap.put("adpost", new PostInfo());
+		PostInfo adPostInfo = new PostInfo();
+		adPostInfo.setAllCategories(ReferenceConstants.CategoryList.getKeyValueMap());
+		mMap.put("adpost", adPostInfo);
 		logger.info("End of addPost()");
 		return new ModelAndView(ADD_POST, mMap);
 	}
@@ -53,8 +62,8 @@ public class PostController {
 	}
 
 	// to save the post
-	@RequestMapping(value = "/post/add/save", method = RequestMethod.GET)
-	public ModelAndView savePost() {
+	@RequestMapping(value = "/post/add/save", method = RequestMethod.POST)
+	public ModelAndView savePost(@ModelAttribute("adpost") PostInfo adpostInfo) {
 		logger.info("redirectToCategory()");
 		ModelMap mMap = new ModelMap();
 		mMap.put("adpost", new PostInfo());

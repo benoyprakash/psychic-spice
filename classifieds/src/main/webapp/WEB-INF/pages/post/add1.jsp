@@ -1,6 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
+<!-- 
+Recaptcha Implementation Documentations
+https://developers.google.com/recaptcha/intro?csw=1
+ -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,7 +32,7 @@
 			        <li class="divider-vertical"></li>
 			        <li><a href="#">Sign In</a></li>
 			        <li>
-						<select id="locationId" style="width: 150px; padding-top: 12px;">
+						<select id="selectlocationId" style="width: 150px; padding-top: 12px;">
 							<option value="" selected="selected">Select a location</option>
 							<option value="1">Cochin</option>
 							<option value="2">Fort Kochi</option>
@@ -74,7 +80,7 @@
 
 				</div>
 				<div class="col-lg-7">
-					<form:form modelAttribute="adpost" action="" method="post">
+					<form:form modelAttribute="adpost" action="${pageContext.request.contextPath}/post/add/save" method="post">
 						<div class="row">
 							<div class="panel panel-success">
 								<div class="panel-heading">
@@ -86,9 +92,12 @@
 											Catogory
 										</div>
 										<div class="col-lg-4">
-											<select >
-												<option value"">Please Select</option>
-											</select>
+											<form:select id="selectCategory" path="category">
+												<option value"0">Please Select</option>
+												<c:forEach items="${allCategories}" var="category1">
+													<option value"${category1.key}">${category1.value}</option>
+												</c:forEach>
+											</form:select>
 										</div>
 									</div>
 									<br />
@@ -97,13 +106,13 @@
 											Sub Category
 										</div>
 										<div class="col-lg-4">
-											<select >
+											<select id="selectSubCategory">
 												<option value"">Please Select</option>
 											</select>
 										</div>
 									</div>
 									<br />
-									<div class="row">
+									<div class="row hidden">
 										<div class="col-lg-4">
 											Tags
 										</div>
@@ -127,23 +136,94 @@
 											What to do ?
 										</div>
 										<div class="col-lg-8">
-											<div class="col-lg-4">
-												<form:radiobutton class="radio" value="1" path="adType" /> Buy
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="1" path="adType" />
+												</div>
+												<div class="col-lg-4">
+													Buy
+												</div>
 											</div>
-											<div class="col-lg-4">
-												<form:radiobutton class="radio" value="1" path="adType" /> Sell
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="1" path="adType" />
+												</div>
+												<div class="col-lg-4">
+													Sell
+												</div>
 											</div>
 										</div>
 									</div>
-									
+									<br />
 									<div class="row">
 										<div class="col-lg-4">
 											Condition
 										</div>
 										<div class="col-lg-8">
-											<form:input class="form-control" type="condition" path="adTitle" />
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="1" path="condition" />
+												</div>
+												<div class="col-lg-4">
+													New
+												</div>
+											</div>
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="0" path="condition" />
+												</div>
+												<div class="col-lg-4">
+													Old
+												</div>
+											</div>
 										</div>
 									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Title
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="adTitle" placeholder="Title for your ad"/>
+										</div>
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Description
+										</div>
+										<div class="col-lg-7">
+											<form:textarea style="resize: vertical;max-height:200px;min-height:45px;" class="form-control" path="adDesc" 
+											placeholder="Explain about your product or service." />
+											<p style="font-family: monospace; font-size: small;">
+												&nbsp; * Please make a simple and honest explanation.<br />
+												&nbsp; * Please do not add your contact details in here.
+											</p>
+									
+										</div>
+									</div>	
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Price
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="price" placeholder="Price : 0.00" style="width: 30%;"/>
+										</div>
+									</div>	
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Tag (Optional)
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="tagWords" placeholder="Words matching your advertisements."/>
+											<p style="font-family: monospace; font-size: small;">
+												&nbsp; * Please mention words which is related to your ad<br />
+												&nbsp; * Separate each words with space
+											</p>
+										</div>
+									</div>							
 								</div>
 							</div>
 						</div>	
@@ -155,15 +235,79 @@
 								<div class="panel-body">
 									<div class="row">
 										<div class="col-lg-4">
-											Title
+											Type
 										</div>
-										<div class="col-lg-4">
-											ABCDE
+										<div class="col-lg-8">
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="1" path="sellerType" />
+												</div>
+												<div class="col-lg-4">
+													Individual
+												</div>
+											</div>
+											<div class="col-lg-3">
+												<div class="col-lg-2">
+													<form:radiobutton class="radio" value="0" path="sellerType" />
+												</div>
+												<div class="col-lg-4">
+													Business
+												</div>
+											</div>
 										</div>
 									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Name
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="name" placeholder="Name" />
+										</div>
+									</div>	
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											Phone
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="phoneNo" placeholder="Phone Number" />
+											<p style="font-family: monospace; font-size: small;">
+												&nbsp; * Mention the STD code if necessary
+											</p>
+										</div>
+									</div>	
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+											E - Mail
+										</div>
+										<div class="col-lg-7">
+											<form:input class="form-control" path="eMail" placeholder="E - Mail id" />
+										</div>
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+										</div>
+										<div class="col-lg-7">
+											<form:button class="btn btn-primary" type="submit" >Submit Ad !</form:button>
+										</div>
+									</div>	
+									<div class="row">
+										<div class="col-lg-4 hidden">
+										</div>
+										<div class="col-lg-7">
+								        <%
+          									ReCaptcha c = ReCaptchaFactory.newReCaptcha("123", "123", false);
+          									out.print(c.createRecaptchaHtml(null, null));
+        								%>		
+																					
+										</div>
+									</div>									
 								</div>
 							</div>
-						</div>							
+						</div>					
 					</form:form>				
 				</div>
 				<div class="col-lg-3 full" >
@@ -253,9 +397,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() { 
-		$("#locationId").select2({
+/* 		$("#locationId").select2({
 			placeholder: "Select a State",
 			allowClear: true
+			}); */
+		
+		$("select[id^='select']").select2({
 			});
 		});
 </script>

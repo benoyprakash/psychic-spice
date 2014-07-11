@@ -5,16 +5,20 @@ import java.util.Map;
 public class PostInfo {
 	// Model Object for creating a new post
 
+	private Map<Integer, String> allCategories;
 	private String category;
 	private String subCategory;
 	private String childCategory;
 	
 	private String adTitle;
+	private String adDesc;
 	// condition : new or used
 	private boolean condition;
 	private String price;
 	// buy / sell
 	private int adType;
+	
+	private String tagWords;
 
 	// Address
 	private String locality;
@@ -25,9 +29,15 @@ public class PostInfo {
 	// Seller Information
 	private boolean sellerType;
 	private String name;
-	private String landPhone;
-	private String mobilePhone;
+	private String phoneNo;
+	private String eMail;
 	
+	public Map<Integer, String> getAllCategories() {
+		return allCategories;
+	}
+	public void setAllCategories(Map<Integer, String> allCategories) {
+		this.allCategories = allCategories;
+	}
 	public String getCategory() {
 		return category;
 	}
@@ -52,6 +62,12 @@ public class PostInfo {
 	public void setAdTitle(String adTitle) {
 		this.adTitle = adTitle;
 	}
+	public String getAdDesc() {
+		return adDesc;
+	}
+	public void setAdDesc(String adDesc) {
+		this.adDesc = adDesc;
+	}
 	public boolean isCondition() {
 		return condition;
 	}
@@ -63,6 +79,18 @@ public class PostInfo {
 	}
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	public int getAdType() {
+		return adType;
+	}
+	public void setAdType(int adType) {
+		this.adType = adType;
+	}
+	public String getTagWords() {
+		return tagWords;
+	}
+	public void setTagWords(String tagWords) {
+		this.tagWords = tagWords;
 	}
 	public String getLocality() {
 		return locality;
@@ -100,23 +128,18 @@ public class PostInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getLandPhone() {
-		return landPhone;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
-	public void setLandPhone(String landPhone) {
-		this.landPhone = landPhone;
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
-	public String getMobilePhone() {
-		return mobilePhone;
+	public String geteMail() {
+		return eMail;
 	}
-	public void setMobilePhone(String mobilePhone) {
-		this.mobilePhone = mobilePhone;
+	public void seteMail(String eMail) {
+		this.eMail = eMail;
 	}
-	public int getAdType() {
-		return adType;
-	}
-	public void setAdType(int adType) {
-		this.adType = adType;
-	}
+	
 	
 }

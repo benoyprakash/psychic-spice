@@ -14,7 +14,6 @@ public class SellerInformation {
 	private long sellerInfoId;
 	private boolean sellerType;
 	private String name;
-	private String landPhone;
 	private String mobilePhone;
 	private String eMailId;
 	
@@ -46,15 +45,6 @@ public class SellerInformation {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	@Column(name = "land_phone_no")
-	public String getLandPhone() {
-		return landPhone;
-	}
-
-	public void setLandPhone(String landPhone) {
-		this.landPhone = landPhone;
 	}
 
 	@Column(name = "mobile_no")
