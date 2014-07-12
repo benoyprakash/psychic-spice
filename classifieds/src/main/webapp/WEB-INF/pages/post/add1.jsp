@@ -54,11 +54,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 			
 			</div>	
 		</div>
-      	<div class="container hidden">
-	      	<div class="alert alert-warning alert-dismissable">
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-				<strong>Welcome!</strong> To a new place to post your ads, and get benefited..!
-			</div>
+      	<div class="container">
 		</div>
 		<!-- body : category row 1 -->
 		<div class="container">	
@@ -80,7 +76,14 @@ https://developers.google.com/recaptcha/intro?csw=1
 
 				</div>
 				<div class="col-lg-7">
-					<form:form modelAttribute="adpost" action="${pageContext.request.contextPath}/post/add/save" method="post">
+					<c:if test="${not empty captchaError}">
+					<div class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						${captchaError}
+					</div>
+					</c:if>
+					<!-- ${pageContext.request.contextPath}/post/add/save -->
+					<form:form id="adPostForm" modelAttribute="adpost" action="" method="get">
 						<div class="row">
 							<div class="panel panel-success">
 								<div class="panel-heading">
@@ -94,7 +97,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 										<div class="col-lg-4">
 											<form:select id="selectCategory" path="category">
 												<option value"0">Please Select</option>
-												<c:forEach items="${allCategories}" var="category1">
+												<c:forEach items="${adpost.allCategories}" var="category1">
 													<option value"${category1.key}">${category1.value}</option>
 												</c:forEach>
 											</form:select>
@@ -184,7 +187,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											Title
 										</div>
 										<div class="col-lg-7">
-											<form:input class="form-control" path="adTitle" placeholder="Title for your ad"/>
+											<form:input id="inputTitle" class="form-control" path="adTitle" placeholder="Title for your ad"/>
 										</div>
 									</div>
 									<br />
@@ -288,23 +291,33 @@ https://developers.google.com/recaptcha/intro?csw=1
 									</div>
 									<br />
 									<div class="row">
-										<div class="col-lg-4">
-										</div>
-										<div class="col-lg-7">
-											<form:button class="btn btn-primary" type="submit" >Submit Ad !</form:button>
-										</div>
-									</div>	
-									<div class="row">
 										<div class="col-lg-4 hidden">
 										</div>
-										<div class="col-lg-7">
+										<div class="col-lg-8" style="margin: 0% 0% 0% 35%;">
 								        <%
-          									ReCaptcha c = ReCaptchaFactory.newReCaptcha("123", "123", false);
+      									ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LeYwPYSAAAAAMXPjkBNmXbiT6O_JFxwol6EFJ8M", "6LeYwPYSAAAAAPBCnS05ah9eC7xhCxFX0Q4hdxXx", false);
+								        	// public key and private key 
           									out.print(c.createRecaptchaHtml(null, null));
-        								%>		
-																					
+        								%>	
+        								
+        								<c:if test="${not empty captchaError}">
+	        								<p style="font-family: monospace; font-size: small;color: red;">
+												&nbsp; * Please type the captcha again.
+											</p>
+        								</c:if>
+        								<p style="font-family: monospace; font-size: small;">
+											&nbsp; * Please fill the text / numbers.
+										</p>
 										</div>
-									</div>									
+									</div>
+									<br />
+									<div class="row">
+										<div class="col-lg-4">
+										</div>
+										<div class="col-lg-7" >
+											<form:button class="btn btn-primary" type="submit" >Submit Ad !</form:button>
+										</div>
+									</div>								
 								</div>
 							</div>
 						</div>					
@@ -387,9 +400,10 @@ https://developers.google.com/recaptcha/intro?csw=1
     		</div>
 
 		</div>
+	</div>
 </div>
-</div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js" ></script>	
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.validate.min.js" ></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/select2.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/alert.js"></script>	
@@ -397,13 +411,28 @@ https://developers.google.com/recaptcha/intro?csw=1
 
 <script type="text/javascript">
 	$(document).ready(function() { 
-/* 		$("#locationId").select2({
-			placeholder: "Select a State",
-			allowClear: true
-			}); */
 		
 		$("select[id^='select']").select2({
+			width: '100%' 
 			});
+		
+		$("#adPostForm").validate({
+
+			rules: {
+			    inputTitle: {
+			        required: true
+			   
+			    }
+			},
+			messages: {
+				inputTitle: {
+					required: "This is a required filed."
+			   
+			    }
+			}
+
+			});
+		
 		});
 </script>
 </body>
