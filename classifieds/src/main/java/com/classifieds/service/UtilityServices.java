@@ -48,23 +48,19 @@ public class UtilityServices {
 		return ipAddress;
 	}
 
-	public boolean validateRecaptcha(HttpServletRequest request) {
+	public boolean isValidateRecaptchaSuccessful(HttpServletRequest request) {
 		// https://developers.google.
 		// com/recaptcha/docs/java?csw=1
 		String remoteAddr = request.getRemoteAddr();
 		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
-		reCaptcha.setPrivateKey("your_private_key");
+		reCaptcha.setPrivateKey("6LeYwPYSAAAAAPBCnS05ah9eC7xhCxFX0Q4hdxXx");
 
 		String challenge = request.getParameter("recaptcha_challenge_field");
 		String uresponse = request.getParameter("recaptcha_response_field");
 		ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer(remoteAddr,
 				challenge, uresponse);
 
-		if (reCaptchaResponse.isValid()) {
-			return true;
-		} else {
-			return false;
-		}
+		return reCaptchaResponse.isValid();
 	}
 
 }

@@ -2,6 +2,8 @@ package com.classifieds.controller;
 
 import static com.classifieds.utils.Views.ADD_POST;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class PostController {
 	@Autowired 
 	private UtilityServices utilityServices;
 	
+	private final String CAPTCHA_WORNG_MSG = "Please re-enter the captcha, you might have typed a worng one.";
+	
 
 	private Logger logger = LoggerFactory.getLogger(PostController.class);
 
@@ -40,10 +44,15 @@ public class PostController {
 
 	// according to category, redirect to corresponding controller
 	@RequestMapping(value = "/post/add", method = RequestMethod.GET)
-	public ModelAndView addPost() {
+	public ModelAndView addPost(PostInfo adPostInfo) {
 		logger.info("redirectToCategory()");
+		
 		ModelMap mMap = new ModelMap();
-		PostInfo adPostInfo = new PostInfo();
+		
+		if(adPostInfo == null){
+			adPostInfo = new PostInfo();
+		}
+		adPostInfo.setAdDesc("");
 		adPostInfo.setAllCategories(ReferenceConstants.CategoryList.getKeyValueMap());
 		mMap.put("adpost", adPostInfo);
 		logger.info("End of addPost()");
@@ -63,10 +72,17 @@ public class PostController {
 
 	// to save the post
 	@RequestMapping(value = "/post/add/save", method = RequestMethod.POST)
-	public ModelAndView savePost(@ModelAttribute("adpost") PostInfo adpostInfo) {
+	public ModelAndView savePost(@ModelAttribute("adpost") PostInfo adPostInfo, HttpServletRequest request, ModelMap mMap) {
 		logger.info("redirectToCategory()");
-		ModelMap mMap = new ModelMap();
-		mMap.put("adpost", new PostInfo());
+		if(mMap == null){
+			mMap = new ModelMap();
+		}
+		if(!utilityServices.isValidateRecaptchaSuccessful(request)){
+//			mMap.put("errorMessage", CAPTCHA_WORNG_MSG);
+			mMap.addAttribute("captchaError", CAPTCHA_WORNG_MSG);
+			addPost(adPostInfo);
+		}
+		
 		logger.info("End of addPost()");
 		return new ModelAndView(ADD_POST, mMap);
 	}
