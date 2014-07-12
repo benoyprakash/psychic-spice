@@ -82,8 +82,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 						${captchaError}
 					</div>
 					</c:if>
-					<!-- ${pageContext.request.contextPath}/post/add/save -->
-					<form:form id="adPostForm" modelAttribute="adpost" action="" method="get">
+					<form:form id="adPostForm" modelAttribute="adpost" action="${pageContext.request.contextPath}/post/add/save" method="post">
 						<div class="row">
 							<div class="panel panel-success">
 								<div class="panel-heading">
@@ -141,7 +140,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 										<div class="col-lg-8">
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="1" path="adType" />
+													<form:radiobutton id="radioInputAdType" class="radio" value="1" path="adType" />
 												</div>
 												<div class="col-lg-4">
 													Buy
@@ -149,7 +148,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											</div>
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="1" path="adType" />
+													<form:radiobutton id="radioInputAdType" class="radio" value="1" path="adType" />
 												</div>
 												<div class="col-lg-4">
 													Sell
@@ -165,7 +164,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 										<div class="col-lg-8">
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="1" path="condition" />
+													<form:radiobutton id="radioInputCondition" class="radio" value="1" path="condition" />
 												</div>
 												<div class="col-lg-4">
 													New
@@ -173,7 +172,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											</div>
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="0" path="condition" />
+													<form:radiobutton id="radioInputCondition" class="radio" value="0" path="condition" />
 												</div>
 												<div class="col-lg-4">
 													Old
@@ -196,7 +195,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											Description
 										</div>
 										<div class="col-lg-7">
-											<form:textarea style="resize: vertical;max-height:200px;min-height:45px;" class="form-control" path="adDesc" 
+											<form:textarea id="inputDescription" style="resize: vertical;max-height:200px;min-height:45px;" class="form-control" path="adDesc" 
 											placeholder="Explain about your product or service." />
 											<p style="font-family: monospace; font-size: small;">
 												&nbsp; * Please make a simple and honest explanation.<br />
@@ -211,7 +210,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											Price
 										</div>
 										<div class="col-lg-7">
-											<form:input class="form-control" path="price" placeholder="Price : 0.00" style="width: 30%;"/>
+											<form:input id="inputPrice" class="form-control" path="price" placeholder="Price : 0.00" style="width: 30%;"/>
 										</div>
 									</div>	
 									<br />
@@ -243,7 +242,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 										<div class="col-lg-8">
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="1" path="sellerType" />
+													<form:radiobutton id="radioInputSellerType" class="radio" value="1" path="sellerType" />
 												</div>
 												<div class="col-lg-4">
 													Individual
@@ -251,7 +250,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											</div>
 											<div class="col-lg-3">
 												<div class="col-lg-2">
-													<form:radiobutton class="radio" value="0" path="sellerType" />
+													<form:radiobutton id="radioInputSellerType" class="radio" value="0" path="sellerType" />
 												</div>
 												<div class="col-lg-4">
 													Business
@@ -265,7 +264,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											Name
 										</div>
 										<div class="col-lg-7">
-											<form:input class="form-control" path="name" placeholder="Name" />
+											<form:input id="inputSellerName" class="form-control" path="name" placeholder="Name" />
 										</div>
 									</div>	
 									<br />
@@ -274,7 +273,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											Phone
 										</div>
 										<div class="col-lg-7">
-											<form:input class="form-control" path="phoneNo" placeholder="Phone Number" />
+											<form:input id="inputSellerPhone" class="form-control" path="phoneNo" placeholder="Phone Number" />
 											<p style="font-family: monospace; font-size: small;">
 												&nbsp; * Mention the STD code if necessary
 											</p>
@@ -286,7 +285,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 											E - Mail
 										</div>
 										<div class="col-lg-7">
-											<form:input class="form-control" path="eMail" placeholder="E - Mail id" />
+											<form:input id="inputEMail" class="form-control" path="eMail" placeholder="E - Mail id" />
 										</div>
 									</div>
 									<br />
@@ -315,7 +314,7 @@ https://developers.google.com/recaptcha/intro?csw=1
 										<div class="col-lg-4">
 										</div>
 										<div class="col-lg-7" >
-											<form:button class="btn btn-primary" type="submit" >Submit Ad !</form:button>
+											<form:button id="submitButton" class="btn btn-primary" type="submit" >Submit Ad !</form:button>
 										</div>
 									</div>								
 								</div>
@@ -415,25 +414,81 @@ https://developers.google.com/recaptcha/intro?csw=1
 		$("select[id^='select']").select2({
 			width: '100%' 
 			});
-		
-		$("#adPostForm").validate({
-
-			rules: {
-			    inputTitle: {
-			        required: true
-			   
-			    }
-			},
-			messages: {
-				inputTitle: {
-					required: "This is a required filed."
-			   
-			    }
-			}
-
-			});
-		
+	
 		});
+	
+	$('#submitButton').on('click', function () {
+	    $('#adPostForm').validate({
+	        submitHandler: function (form) {
+	            form.submit();
+	        }
+	    });
+	    
+	    $("#inputTitle").rules("add", {
+	        required: true,
+	        minlength: 12,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>",
+	            minlength : "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * Minimum 3 words(15 characters)</p>"
+	        }
+	    });
+	    $("#inputDescription").rules("add", {
+	        required: true,
+	        minlength: 30,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>",
+	            minlength : "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * Minimum 30  characters</p>"
+	        }
+	    });
+	    $("#inputPrice").rules("add", {
+	        required: true,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>"
+	        }
+	    });
+	    $("#inputSellerName").rules("add", {
+	        required: true,
+	        minlength: 5,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>",
+	            minlength : "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * Minimum 5  characters</p>"
+	        }
+	    });
+	    $("#inputEMail").rules("add", {
+	        required: false,
+	        email: true,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>",
+	            email : "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * Please enter a valid E - Mail</p>"
+	        }
+	    });
+	    $("#inputSellerPhone").rules("add", {
+	        required: true,
+	        minlength: 10,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * This is a required field</p>",
+	            minlength : "<p style='font-family: monospace; font-size: small;color: red;'>&nbsp; * Please enter a valid number</p>"
+	        }
+	    });
+	    $("#radioInputAdType").rules("add", {
+	        required: true,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>Required</p>"
+	        }
+	    });
+	    $("#radioInputCondition").rules("add", {
+	        required: true,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>Required</p>"
+	        }
+	    });
+	    $("#radioInputSellerType").rules("add", {
+	        required: true,
+	        messages: {
+	            required: "<p style='font-family: monospace; font-size: small;color: red;'>Required</p>"
+	        }
+	    });
+	});
 </script>
 </body>
 </html>
