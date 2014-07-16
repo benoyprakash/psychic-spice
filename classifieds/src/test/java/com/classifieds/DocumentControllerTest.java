@@ -18,8 +18,8 @@ public class DocumentControllerTest extends ClassifiedsTestInitializer{
 	@Test
 	public void getFileTest(){
 		
-		String filePath = "";
-		String fileName = "";
+		String filePath = "F:\\fileTest\\";
+		String fileName = "1.txt";
 				
 		documentController.getFile(filePath, fileName);
 		
